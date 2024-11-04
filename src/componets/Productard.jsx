@@ -2,12 +2,17 @@ import React from "react";
 import { FaRegEye, FaRegHeart } from "react-icons/fa";
 
 const Productard = ({ product }) => {
+  const productImage =
+    product.images && product.images.length > 0
+      ? product.images[0]
+      : "path/to/placeholder/image.jpg";
+
   return (
     <div className="w-full group cursor-pointer h-full">
       <div className="relative overflow-hidden">
-        <img src={product.images[0]} alt={product.name} />
+        <img src={productImage} alt={product.name || "Product"} />
         <div className="absolute -bottom-20 group-hover:bottom-2 transition-all duration-500 ease-in-out w-full">
-          <button className=" w-11/12 block mx-auto bg-lime-200 hover:bg-lime-400 transition-all duration-200 ease-linear py-2">
+          <button className="w-11/12 block mx-auto bg-lime-200 hover:bg-lime-400 transition-all duration-200 ease-linear py-2">
             Add To Cart
           </button>
         </div>

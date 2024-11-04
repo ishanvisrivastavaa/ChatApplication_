@@ -44,7 +44,7 @@ const Home = () => {
         <Newsletter />
       </div>
       <div className="w-full bg-gray-100">
-        <Footer />
+      
       </div>
     </div>
   );
